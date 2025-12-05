@@ -1,0 +1,10 @@
+<div>
+   @for(products of displayProducts$ | async; track $index){
+        <h3>{{products.title}}</h3>
+        <p>{{products.description}}</p>
+        <p>Price: {{products.price}}</p>
+        <p>Category: {{products.category}}</p>
+       <p>Rating: {{products.rating}}</p>
+        <hr>  
+       }
+</div>
