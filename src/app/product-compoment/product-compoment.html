@@ -1,5 +1,5 @@
 <div>
-   @for(products of displayProducts$ | async; track $index){
+   @for(products of curdPrducts$ | async; track $index){
         <h3>{{products.title}}</h3>
         <p>{{products.description}}</p>
         <p>Price: {{products.price}}</p>
@@ -7,4 +7,9 @@
        <p>Rating: {{products.rating}}</p>
         <hr>  
        }
+       <button class="btn btn-primary" type="edit" (click)= "addProduct()" >Add Product</button>
+      <button class="btn btn-primary" type="edit" (click)= "editProduct()" >Edit Product</button>
+      <button class="btn btn-danger" type="edit" (click)= "deleteProduct()" >Delete Product</button>
+
+
 </div>

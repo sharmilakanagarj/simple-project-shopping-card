@@ -18,4 +18,16 @@ getProducts() : Observable<Iproducts[]>{
     return this.httpClient.get<Iproducts[]>(this.products_api_url);
 }
 
+postProducts(products:Iproducts): Observable<Iproducts[]>{
+    return this.httpClient.post<Iproducts[]>(this.products_api_url, products);
+}
+
+editProducts(id:number,products:Iproducts):Observable<Iproducts[]>{
+    return this.httpClient.put<Iproducts[]>('$this.products_api_url}/${id}', products);
+}
+
+deleteProducts(id:number):Observable<{}>{
+    return this.httpClient.delete<{}>('${this.products_api_url}/ ${id}');        
+}
+
 }
