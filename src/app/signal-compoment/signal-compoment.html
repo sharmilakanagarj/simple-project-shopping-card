@@ -1,0 +1,13 @@
+
+<p>Products List using Signal</p>
+@for(product of products() ; track $index){
+   <h3>{{product.title}}</h3>
+   <p>{{product.description}}</p>
+   <p>Price: {{product.price}}</p>
+   <p>Category: {{product.category}}</p>
+   <p>Rating: {{product.rating.rate}} ({{product.rating.count}} reviews)</p>
+   <button class="btn btn-primary" type="edit" (click)= "updateSignal() " >Edit</button>
+   <hr>  
+  }
+
+

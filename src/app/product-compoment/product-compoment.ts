@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { getCurdProductList } from '../../Store/Curd.selector';
 import { addCurdProducts, addCurdProductsSuccess, deleteCurdProducts, editCurdProducts, loadCurdProducts } from '../../Store/Curd.action';
 import { Iproducts } from '../../Interface/products.store';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-compoment',
@@ -20,6 +21,7 @@ export class ProductCompoment implements OnInit {
 
   displayProducts$ = this.store.select(getProductList);
   curdPrducts$! : Observable<Iproducts[]>; 
+  router = inject(Router);
 
   ngOnInit(): void {
     this.store.dispatch(loadCurdProducts());
@@ -55,5 +57,9 @@ export class ProductCompoment implements OnInit {
   deleteProduct(){
     this.store.dispatch(deleteCurdProducts({id:2}));
 
+  }
+
+  getSingleProduct(){
+    this.router.navigate(['/signal']);
   }
 }
